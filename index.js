@@ -3,9 +3,7 @@ var clock = document.getElementById('clock');
 var body = document.getElementById('body');
 var darkmode = document.getElementById('darkmode');
 
-function fullscreen(){
-    body.requestFullscreen();
-}
+
 
 
 setInterval(function(){
