@@ -1,20 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uhr</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-        </style>
-</head>
-<body id="body">
-    <div id="fullscreen">Press F11 for Fullscreen.</div>
-    <div class="container">
-        <h1 id="clock"></h1>
+      * {
+        margin: 0;
+        padding: 0;
+        color: rgba(160, 181, 214, 0.288);
+        font-size: 25vw;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        user-select: none;
+      }
+      body {
+        background-color: rgb(41, 41, 41);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 70vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(29, 88, 177, 0.288);
+        border-radius: 4vw;
+        box-shadow: 0 0 4vw black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="Uhr">00:00</h1>
     </div>
 
-    <script src="index.js"></script>
-</body>
+    <script>
+      const uhr = document.getElementById("Uhr");
+
+      setInterval(function () {
+        var now = new Date();
+
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+
+        if (hours < 10) {
+          hours = "0" + hours;
+        }
+        if (minutes < 10) {
+          minutes = "0" + minutes;
+        }
+        uhr.innerHTML = hours + ":" + minutes;
+      }, 10);
+    </script>
+  </body>
 </html>
